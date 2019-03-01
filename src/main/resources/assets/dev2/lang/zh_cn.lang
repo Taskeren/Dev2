@@ -1,0 +1,19 @@
+
+
+cmd.oredict.usage=§a查询矿物辞典
+
+cmd.oredict.search.usage=§a通过名称查询矿物辞典
+cmd.oredict.search.example=§a/oredict search <orename> [isForce]
+cmd.oredict.search.null=§a错误的参数！请输入需要查询的矿物辞典名称。
+cmd.oredict.search.output=§a矿物辞典中共找到 %s §a个使用包含 %s §a注册的物品。
+cmd.oredict.search.output.force=§a矿物辞典中共找到 %s §a个使用 %s §a注册的物品。
+cmd.oredict.search.output.entry=- %s （%s） 
+cmd.oredict.search.output.warning=§a同一ID的物品只会输出一次名称。
+cmd.oredict.search.output.failure=§a在获取物品 %s §a本地化名称时发生错误。
+
+cmd.oredict.inhand.usage=§a查询手中物品的矿物辞典
+cmd.oredict.inhand.example=§a/oredict inhand
+cmd.oredict.inhand.notplayer=§a求求你当个人吧！
+cmd.oredict.inhand.null=§a手可不是个东西！
+cmd.oredict.inhand.output=§a你手中物品拥有 %s §a个矿物辞典名称。
+cmd.oredict.inhand.output.entry=- %s
