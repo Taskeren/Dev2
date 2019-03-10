@@ -5,12 +5,15 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import task.dev2.common.CommonProxy;
+import task.dev2.registry.Register;
+import task.dev2.registry.Rs;
 
 public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void preinit(FMLPreInitializationEvent evt) {
 		super.preinit(evt);
+		Register.itemTextureReg(Rs.ITEMS);
 	}
 
 	@Override

@@ -1,5 +1,9 @@
 package task.dev2;
 
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Enchantments;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -43,5 +47,14 @@ public class Dev2 {
 	public void serverstarting(FMLServerStartingEvent evt) {
 		proxy.serverstarting(evt);
 	}
+	
+	public static final CreativeTabs tab = new CreativeTabs("dev2") {
+		@Override
+		public ItemStack getTabIconItem() {
+			ItemStack icon = new ItemStack(Blocks.COMMAND_BLOCK);
+			icon.addEnchantment(Enchantments.SHARPNESS, 32767);
+			return icon;
+		}
+	};
 	
 }
