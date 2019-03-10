@@ -12,7 +12,12 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import task.dev2.common.CommonProxy;
 
-@Mod(modid = Dev2.MODID, name = Dev2.NAME)
+/**
+ * The Mod for Development. <br>
+ * <a href="https://github.com/nitu2003/dev2">GitHub</a>
+ * @author Taskeren
+ */
+@Mod(modid = Dev2.MODID, name = Dev2.NAME, version = Dev2.VERSION)
 public class Dev2 {
 
 	public static final String MODID = "dev2";
