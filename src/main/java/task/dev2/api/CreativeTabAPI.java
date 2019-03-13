@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Enchantments;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import task.dev2.registry.Rs;
+import task.dev2.util.DataPair;
+import task.dev2.util.ItemUtils;
 
 public class CreativeTabAPI {
 
@@ -42,6 +47,9 @@ public class CreativeTabAPI {
 		addItem(Blocks.COMMAND_BLOCK);
 		addItem(Blocks.BARRIER);
 		addItem(Blocks.DRAGON_EGG);
+		addItem(ItemUtils.addEnchantments(new ItemStack(Items.STICK), 
+				new DataPair<Enchantment, Integer>(Enchantments.SHARPNESS, 32766),
+				new DataPair<Enchantment, Integer>(Enchantments.KNOCKBACK, 10)));
 	}
 	
 }
