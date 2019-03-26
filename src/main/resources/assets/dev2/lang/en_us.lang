@@ -1,7 +1,8 @@
+# 跪求大佬翻译！
 
-item.Debug.name=调试
+item.Debug.name=Debug
 
-itemGroup.dev2=§d调试②
+itemGroup.dev2=§dDebug②
 
 cmd.oredict.usage=§a查询矿物辞典
 cmd.color.usage=§a查询颜色
@@ -26,9 +27,9 @@ cmd.color.example=§a/color [String]
 
 color.0=§00 §11 §22 §33 §44 §55 §66 §77
 color.1=§88 §99 §aa §bb §cc §dd §ee §ff
-color.2=k §kMinecraft §r(乱码)
-color.3=l §lMinecraft §r(粗体)
-color.4=m §mMinecraft §r(删除)
-color.5=n §nMinecraft §r(下划)
-color.6=o §oMinecraft §r(斜体)
-color.7=r §rMinecraft §r(重置)
+color.2=k §kMinecraft §r(Obfuscated)
+color.3=l §lMinecraft §r(Bold)
+color.4=m §mMinecraft §r(Strikethroug)
+color.5=n §nMinecraft §r(Underline)
+color.6=o §oMinecraft §r(Italic)
+color.7=r §rMinecraft §r(Reset)
