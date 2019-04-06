@@ -21,4 +21,14 @@ public class OreDictHelper {
 		
 	}
 	
+	public static List<String> getOreDict(ItemStack stack) {
+		List<String> oredicts = new ArrayList<String>();
+		int[] ids = OreDictionary.getOreIDs(stack);
+		for(int id : ids) {
+			String oredict = OreDictionary.getOreName(id);
+			oredicts.add(oredict);
+		}
+		return oredicts;
+	}
+	
 }

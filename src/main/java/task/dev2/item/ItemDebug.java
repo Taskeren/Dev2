@@ -21,8 +21,10 @@ public class ItemDebug extends Item {
 	@Override
 	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
 		if(tab == Dev2.tab) {
-			List<ItemStack> stacks = CreativeTabAPI.getItems();
-			items.addAll(stacks);
+			items.addAll(CreativeTabAPI.getItems());
+		}
+		if(tab == Dev2.tabSkull) {
+			items.addAll(CreativeTabAPI.getSkulls());
 		}
 		super.getSubItems(tab, items);
 	}

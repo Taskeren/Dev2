@@ -2,6 +2,7 @@ package task.dev2.util;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 
 public class ItemUtils {
 	
@@ -15,6 +16,11 @@ public class ItemUtils {
 			stack.addEnchantment(pair.v1, pair.v2);
 		}
 		return stack;
+	}
+	
+	public static NBTTagCompound getOrCreateTag(ItemStack stack) {
+		if(!stack.hasTagCompound()) stack.setTagCompound(new NBTTagCompound());
+		return stack.getTagCompound();
 	}
 	
 }
