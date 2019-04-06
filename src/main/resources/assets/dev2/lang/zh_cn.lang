@@ -24,6 +24,7 @@ cmd.oredict.inhand.output=§a你手中物品拥有 %s §a个矿物辞典名称�
 cmd.oredict.inhand.output.entry=- %s
 
 cmd.color.example=§a/color [String]
+cmd.color.prefix=§
 
 cmd.skull.usage=§a/skull <玩家ID> 或 /skull <头颅ID> <头颅材质>
 cmd.skull.owner=§a这个人头属于 §b%s

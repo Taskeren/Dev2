@@ -3,6 +3,7 @@ package task.dev2.command.color;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import net.minecraft.client.resources.I18n;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -39,7 +40,7 @@ public class Color extends CommandBase {
 		String re = "";
 		for(String s : str)
 			re += s + " ";
-		return StringUtils.replace(re, "&", "§");
+		return StringUtils.replace(re, "&", I18n.format("cmd.color.prefix"));
 	}
 
 }
