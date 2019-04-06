@@ -2,28 +2,34 @@
 
 item.Debug.name=Debug
 
-itemGroup.dev2=§dDebug②
+itemGroup.dev2=§dDev②
+itemGroup.dev2-skull=§dDev② §bSkull
 
-cmd.oredict.usage=§a查询矿物辞典
-cmd.color.usage=§a查询颜色
+cmd.oredict.usage=§a/oredict search <OreName> [isForce] OR /oredict inhand
+cmd.color.usage=§a/color 或 /color <Text with Style Code>
 
-cmd.oredict.search.usage=§a通过名称查询矿物辞典
-cmd.oredict.search.example=§a/oredict search <orename> [isForce]
-cmd.oredict.search.null=§a错误的参数！请输入需要查询的矿物辞典名称。
-cmd.oredict.search.output=§a矿物辞典中共找到 %s §a个使用包含 %s §a注册的物品。
-cmd.oredict.search.output.force=§a矿物辞典中共找到 %s §a个使用 %s §a注册的物品。
+cmd.oredict.search.usage=§a/oredict search <OreName> [isForce]
+cmd.oredict.search.example=§a/oredict search <OreName> [isForce]
+cmd.oredict.search.null=§aWrong Arguments! Input the ORENAME to search.
+cmd.oredict.search.output=§aThere are %s §akinds of ores in OreDictionary whose OreName contains %s §a.
+cmd.oredict.search.output.force=§aThere are %s §akinds of ores in Dictionary which called %s §a.
 cmd.oredict.search.output.entry=- %s （%s） 
-cmd.oredict.search.output.warning=§a同一ID的物品只会输出一次名称。
-cmd.oredict.search.output.failure=§a在获取物品 %s §a本地化名称时发生错误。
+cmd.oredict.search.output.warning=§aItems with the same id will only print once.
+cmd.oredict.search.output.failure=§aCannot get the name of %s§a.
 
-cmd.oredict.inhand.usage=§a查询手中物品的矿物辞典
+cmd.oredict.inhand.usage=§a/oredict inhand
 cmd.oredict.inhand.example=§a/oredict inhand
-cmd.oredict.inhand.notplayer=§a求求你当个人吧！
-cmd.oredict.inhand.null=§a手可不是个东西！
-cmd.oredict.inhand.output=§a你手中物品拥有 %s §a个矿物辞典名称。
+cmd.oredict.inhand.notplayer=§aYou're not a player!
+cmd.oredict.inhand.null=§aHand is not an item!
+cmd.oredict.inhand.output=§aThe item in your hand has %s §aOreName(s)。
 cmd.oredict.inhand.output.entry=- %s
 
 cmd.color.example=§a/color [String]
+cmd.color.prefix=§
+
+cmd.skull.usage=§a/skull <Username> 或 /skull <SkullID> <SkullTexture>
+cmd.skull.owner=§aThis is §b%s§a's skull.
+cmd.skull.notskull=§aThere is NOT a player skull in your hand.
 
 color.0=§00 §11 §22 §33 §44 §55 §66 §77
 color.1=§88 §99 §aa §bb §cc §dd §ee §ff
@@ -33,3 +39,26 @@ color.4=m §mMinecraft §r(Strikethroug)
 color.5=n §nMinecraft §r(Underline)
 color.6=o §oMinecraft §r(Italic)
 color.7=r §rMinecraft §r(Reset)
+
+welcome.0=§aThanks for using §dDevelopment2§a！
+welcome.1=§aThis mod is only for developer!
+welcome.2=§aThe GitHub Repository： §bhttps://github.com/nitu2003/Dev2
+welcome.3=§a§bPull-Request§a and §bIssue§a is welcome.
+
+information.basic.registry.title=§aRegistry Name
+information.basic.registry.content=§b- %s
+information.basic.unlocalized.title=§aUnlocalized Name
+information.basic.unlocalized.content=§b- %s
+information.food.title=§aFood
+information.food.amount=§b- §6Amount: §b%s
+information.food.saturation=§b- §6Saturation: §b%s
+information.food.wolf.true=§b- Can be eaten by wolves
+information.food.wolf.false=§b- Cannot be eaten by wolves
+information.record.title=§aRecord
+information.record.name=§b- §6Local Record Name: §b%s
+information.record.sound=§b- §6Sound Registry Name: §b%s
+information.record.unlocalized=§b- §6Sound Unlocalized Name: §b%s
+information.skull.title=§aSkull
+information.skull.player=§b- §6Skull Owner: §b%s
+information.oredict.title=§aOreDictionary
+information.oredict.content=§b- %s

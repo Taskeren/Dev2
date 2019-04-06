@@ -1,4 +1,5 @@
 
+
 item.Debug.name=调试
 
 itemGroup.dev2=§d调试②
@@ -16,7 +17,7 @@ cmd.oredict.search.output.entry=- %s （%s）
 cmd.oredict.search.output.warning=§a同一ID的物品只会输出一次名称。
 cmd.oredict.search.output.failure=§a在获取物品 %s §a本地化名称时发生错误。
 
-cmd.oredict.inhand.usage=§a查询手中物品的矿物辞典
+cmd.oredict.inhand.usage=§a/oredict inhand
 cmd.oredict.inhand.example=§a/oredict inhand
 cmd.oredict.inhand.notplayer=§a求求你当个人吧！
 cmd.oredict.inhand.null=§a手可不是个东西！
