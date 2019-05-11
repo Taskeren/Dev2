@@ -9,6 +9,7 @@ import net.minecraft.item.ItemRecord;
 import net.minecraft.item.ItemSkull;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -62,7 +63,8 @@ public class ItemTooltipHandler {
 		if(stack.getItem() instanceof ItemRecord) {
 			ItemRecord record = (ItemRecord) stack.getItem();
 			String name = record.getRecordNameLocal();
-			String sound = record.getSound().getRegistryName().toString();
+			ResourceLocation rl = record.getSound().getRegistryName(); 
+			String sound = rl == null ? "null" : rl.toString();
 			String unlocalized = record.getSound().getSoundName().toString();
 			tooltip.add(I18n.format("information.record.title"));
 			tooltip.add(I18n.format("information.record.name", name));
