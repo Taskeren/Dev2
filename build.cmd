@@ -4,4 +4,4 @@ echo Build
 echo ####################
 echo.
 title build
-./gradlew build --offline
+./gradlew build -DsocksProxyHost=localhost -DsocksProxyPort=2080
