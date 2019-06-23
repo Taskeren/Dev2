@@ -4,16 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Enchantments;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import task.dev2.command.skull.SkullHelper;
 import task.dev2.registry.Rs;
-import task.dev2.util.DataPair;
-import task.dev2.util.ItemUtils;
 
 public class CreativeTabAPI {
 
@@ -21,7 +15,7 @@ public class CreativeTabAPI {
 	private static final List<ItemStack> skulls = new ArrayList<ItemStack>();
 	
 	public static void addItem(ItemStack stack) {
-		items.add(stack);
+		if(!items.contains(stack)) items.add(stack);
 	}
 	
 	public static void addItem(Item item) {
@@ -45,7 +39,7 @@ public class CreativeTabAPI {
 	}
 	
 	public static void addSkull(ItemStack skull) {
-		skulls.add(skull);
+		if(!skulls.contains(skull)) skulls.add(skull);
 	}
 	
 	public static List<ItemStack> getSkulls() {
@@ -54,12 +48,6 @@ public class CreativeTabAPI {
 	
 	public static void init() {
 		addItem(Rs.Debug);
-		addItem(Blocks.COMMAND_BLOCK);
-		addItem(Blocks.BARRIER);
-		addItem(Blocks.DRAGON_EGG);
-		addItem(ItemUtils.addEnchantments(new ItemStack(Items.STICK), 
-				new DataPair<Enchantment, Integer>(Enchantments.SHARPNESS, 32765),
-				new DataPair<Enchantment, Integer>(Enchantments.KNOCKBACK, 10)));
 		
 		addSkull(SkullHelper.setSkullOwner(null, "82f740c9-af74-4620-9c76-f6012a8c0af8", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmYyY2RmZjYyZjA1ZGJlN2RiN2ZkMTkxOTQ5MTgzZTI3NjRkNjhmMzc3MjZkYjM1NmFhNDYxYTU4YzU0YSJ9fX0=").setStackDisplayName("Blue Bucket of Milk"));
 		addSkull(SkullHelper.setSkullOwner(null, "a75e3f60-2242-4429-8ece-bcde7753b064", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjM0ODdkNDU3ZjkwNjJkNzg3YTNlNmNlMWM0NjY0YmY3NDAyZWM2N2RkMTExMjU2ZjE5YjM4Y2U0ZjY3MCJ9fX0=").setStackDisplayName("Bread"));

@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import task.dev2.command.oredict.OreDictHelper;
 import task.dev2.command.skull.SkullHelper;
+import task.dev2.config.Cfg;
 import task.dev2.util.ItemUtils;
 
 @Mod.EventBusSubscriber(Side.CLIENT)
@@ -25,12 +26,12 @@ public class ItemTooltipHandler {
 	public static void addTooltip(ItemTooltipEvent evt) {
 		List<String> tooltip = evt.getToolTip();
 		ItemStack stack = evt.getItemStack();
-		registry(tooltip, stack);
-		unlocalized(tooltip, stack);
-		food(tooltip, stack);
-		record(tooltip, stack);
-		skull(tooltip, stack);
-		oredict(tooltip, stack);
+		if(Cfg.function.showRegistryName)       registry(tooltip, stack);
+		if(Cfg.function.showUnlocalizedName)    unlocalized(tooltip, stack);
+		if(Cfg.function.showFoodInformation)    food(tooltip, stack);
+		if(Cfg.function.showRecordInformation)  record(tooltip, stack);
+		if(Cfg.function.showSkullInformation)   skull(tooltip, stack);
+		if(Cfg.function.showOredictInformation) oredict(tooltip, stack);
 	}
 	
 	static void registry(List<String> tooltip, ItemStack stack) {
@@ -40,7 +41,7 @@ public class ItemTooltipHandler {
 	}
 	
 	static void unlocalized(List<String> tooltip, ItemStack stack) {
-		String unlocalizedname = stack.getUnlocalizedName();
+		String unlocalizedname = stack.getTranslationKey();
 		tooltip.add(I18n.format("information.basic.unlocalized.title"));
 		tooltip.add(I18n.format("information.basic.unlocalized.content", unlocalizedname));
 	}

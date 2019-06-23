@@ -1,7 +1,5 @@
 package task.dev2.item;
 
-import java.util.List;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,7 +11,7 @@ public class ItemDebug extends Item {
 
 	public ItemDebug() {
 		this.setRegistryName("debug");
-		this.setUnlocalizedName("Debug");
+		this.setTranslationKey("Debug");
 		this.setFull3D();
 		this.setHasSubtypes(true);
 	}

@@ -62,4 +62,6 @@ information.skull.title=§a头颅
 information.skull.player=§b- §6头颅主人（SkullOwner）： §b%s
 information.oredict.title=§a矿典
 information.oredict.content=§b- %s
+information.localized.title=§a英文名称
+information.localized.content=§b- %s
 

@@ -1,6 +1,5 @@
 package task.dev2.command.color;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import net.minecraft.client.resources.I18n;
@@ -38,8 +37,9 @@ public class Color extends CommandBase {
 
 	public static String merge(String[] str) {
 		String re = "";
-		for(String s : str)
+		for(String s : str) {
 			re += s + " ";
+		}
 		return StringUtils.replace(re, "&", I18n.format("cmd.color.prefix"));
 	}
 
