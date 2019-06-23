@@ -66,6 +66,7 @@ information.oredict.content=§b- %s
 function.skulldata.notskull=§7你手中没有头颅
 function.skulldata.invalid=§7头颅信息缺失
 function.skulldata.copied=§7成功复制到剪贴板！
+function.skulldata.uncopied=§7无法复制到剪贴板！
 
 key.dev2.category=Dev2
 key.dev2.skull=获取头颅信息

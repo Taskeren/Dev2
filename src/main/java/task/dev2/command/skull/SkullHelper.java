@@ -12,7 +12,7 @@ import task.dev2.util.ItemUtils;
 public class SkullHelper {
 
 	public static String getSkullOwner(ItemStack stack) {
-		if(stack.getItem() == Items.SKULL && stack.getMetadata() == 3) {
+		if(isPlayerSkull(stack)) {
 			NBTTagCompound nbt = ItemUtils.getOrCreateTag(stack);
 			String owner = nbt.getString("SkullOwner");
 			if(owner.equals("")) {
@@ -27,7 +27,7 @@ public class SkullHelper {
 	
 	public static ItemStack setSkullOwner(ItemStack stack, String skullowner) {
 		if(stack == null) stack = new ItemStack(Items.SKULL, 1, 3);
-		if(stack.getItem() == Items.SKULL && stack.getMetadata() == 3) {
+		if(isPlayerSkull(stack)) {
 			NBTTagCompound nbt = ItemUtils.getOrCreateTag(stack);
 			nbt.setString("SkullOwner", skullowner);
 		}
@@ -36,7 +36,7 @@ public class SkullHelper {
 	
 	public static ItemStack setSkullOwner(ItemStack stack, String id, String texture) {
 		if(stack == null) stack = new ItemStack(Items.SKULL, 1, 3);
-		if(stack.getItem() == Items.SKULL && stack.getMetadata() == 3) {
+		if(isPlayerSkull(stack)) {
 			NBTTagCompound root = ItemUtils.getOrCreateTag(stack);
 			NBTTagCompound skullowner = new NBTTagCompound();
 			NBTTagCompound properties = new NBTTagCompound();
@@ -83,6 +83,10 @@ public class SkullHelper {
 			return skull;
 		}
 		return ItemStack.EMPTY;
+	}
+	
+	public static boolean isPlayerSkull(ItemStack stack) {
+		return stack.getItem() == Items.SKULL && stack.getItemDamage() == 3;
 	}
 	
 }

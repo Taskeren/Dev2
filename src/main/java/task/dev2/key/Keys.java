@@ -18,6 +18,8 @@ import net.minecraftforge.fml.common.gameevent.InputEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import task.dev2.command.skull.SkullHelper;
 
+import static task.dev2.command.skull.SkullHelper.isPlayerSkull;
+
 @Mod.EventBusSubscriber(value = Side.CLIENT)
 public class Keys {
 
@@ -46,17 +48,18 @@ public class Keys {
 		
 	}
 	
-	private static boolean isPlayerSkull(ItemStack stack) {
-		return stack.getItem() == Items.SKULL && stack.getItemDamage() == 3;
-	}
-	
 	private static void copySkullData(EntityPlayerSP player, ItemStack skull) {
 		String data = SkullHelper.serialize(skull);
 		if(data.startsWith("||")) {
 			player.sendMessage(new TextComponentTranslation("function.skulldata.invalid"));
+		} else {
+			try {
+				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(data), null);
+				player.sendMessage(new TextComponentTranslation("function.skulldata.copied"));
+			} catch(Exception e) {
+				player.sendMessage(new TextComponentTranslation("function.skulldata.uncopied"));
+			}
 		}
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(data), null);
-		player.sendMessage(new TextComponentTranslation("function.skulldata.copied"));
 	}
 	
 }

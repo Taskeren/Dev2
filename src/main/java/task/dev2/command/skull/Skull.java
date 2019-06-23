@@ -31,7 +31,7 @@ public class Skull extends CommandBase {
 				stack = player.getHeldItemOffhand();
 			}
 		}
-		if(stack == null || stack.getItem() != Items.SKULL || stack.getMetadata() != 3) {
+		if(stack == null || stack.getItem() != Items.SKULL || stack.getItemDamage() != 3) {
 			sender.sendMessage(new TextComponentTranslation("cmd.skull.notskull"));
 			return;
 		}
