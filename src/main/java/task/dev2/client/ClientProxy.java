@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import task.dev2.common.CommonProxy;
+import task.dev2.key.Keys;
 import task.dev2.registry.Register;
 import task.dev2.registry.Rs;
 
@@ -19,6 +20,7 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void init(FMLInitializationEvent evt) {
 		super.init(evt);
+		Keys.init();
 	}
 
 	@Override

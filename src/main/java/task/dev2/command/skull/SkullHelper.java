@@ -4,7 +4,9 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.nbt.NBTTagString;
+import net.minecraftforge.common.util.Constants;
+import task.dev2.Dev2;
+import task.dev2.api.CreativeTabAPI;
 import task.dev2.util.ItemUtils;
 
 public class SkullHelper {
@@ -50,6 +52,37 @@ public class SkullHelper {
 		}
 		
 		return stack;
+	}
+	
+	public static String serialize(ItemStack skull) {
+		NBTTagCompound root = ItemUtils.getOrCreateTag(skull);
+		NBTTagCompound skullowner = root.getCompoundTag("SkullOwner");
+		String skullid = skullowner.getString("Id");
+		NBTTagCompound properties = skullowner.getCompoundTag("Properties");
+		NBTTagList textures = properties.getTagList("textures", Constants.NBT.TAG_COMPOUND);
+		NBTTagCompound property = textures.getCompoundTagAt(0);
+		String texture = property.getString("Value");
+		return skullid+"|"+texture+"|"+skull.getDisplayName();
+	}
+	
+	public static ItemStack deserialize(String skullcode) {
+		String[] parts = skullcode.split("\\|");
+		if(parts.length > 3) {
+			Dev2.warn("Failed to deserialize the skull code, too many parts: {}", skullcode);
+		}
+		else if(parts.length < 2) {
+			Dev2.warn("Failed to deserialize the skull code, too few parts: {}", skullcode);
+		}
+		else {
+			String skullid = parts[0];
+			String texture = parts[1];
+			String display = null;
+			if(parts.length == 3) display = parts[2];
+			ItemStack skull = SkullHelper.setSkullOwner(null, skullid, texture);
+			if(display != null) skull.setStackDisplayName(display);
+			return skull;
+		}
+		return ItemStack.EMPTY;
 	}
 	
 }

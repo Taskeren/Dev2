@@ -1,19 +1,20 @@
 package task.dev2;
 
+import java.util.Arrays;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import task.dev2.api.CreativeTabAPI;
+import task.dev2.command.skull.SkullHelper;
 import task.dev2.config.Cfg;
-import task.dev2.config.CfgAdvanced;
 
 public class FunctionInit {
 
 	private static final Logger logger = LogManager.getLogger("FunctionInit");
 	
-	// Add the items that are excepted to appear in the creative tab that is Dev2
-	// The items is from config whose category is advanced
 	public static void loadItems() {
 		for(String id : Cfg.advanced.itemsInTab) {
 			Item item = Item.getByNameOrId(id);
@@ -22,6 +23,13 @@ public class FunctionInit {
 			} else {
 				CreativeTabAPI.addItem(item);
 			}
+		}
+	}
+	
+	public static void loadSkulls() {
+		for(String code : Cfg.advanced.skullsInTab) {
+			ItemStack skull = SkullHelper.deserialize(code);
+			if(skull != ItemStack.EMPTY) CreativeTabAPI.addSkull(skull);
 		}
 	}
 	

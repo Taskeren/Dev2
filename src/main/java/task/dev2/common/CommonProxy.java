@@ -23,6 +23,7 @@ public class CommonProxy {
 	
 	public void postinit(FMLPostInitializationEvent evt) {
 		FunctionInit.loadItems();
+		FunctionInit.loadSkulls();
 	}
 	
 	public void serverstarting(FMLServerStartingEvent evt) {

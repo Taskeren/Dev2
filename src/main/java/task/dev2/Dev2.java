@@ -1,5 +1,8 @@
 package task.dev2;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
@@ -28,6 +31,8 @@ public class Dev2 {
 	
 	public static final String GUI_FACTORY = "task.dev2.gui.ConfigGuiFactory";
 	
+	private static final Logger LOG = LogManager.getLogger("DEV2");
+	
 	@SidedProxy(serverSide = Dev2.COMMON_PROXY, clientSide = Dev2.CLIENT_PROXY)
 	public static CommonProxy proxy;
 	
@@ -52,6 +57,10 @@ public class Dev2 {
 	@Mod.EventHandler
 	public void serverstarting(FMLServerStartingEvent evt) {
 		proxy.serverstarting(evt);
+	}
+	
+	public static void warn(String message, Object...format) {
+		LOG.warn(message, format);
 	}
 	
 	public static final CreativeTabs tab = new CreativeTabs("dev2") {
