@@ -63,3 +63,8 @@ information.skull.player=§b- §6头颅主人（SkullOwner）： §b%s
 information.oredict.title=§a矿典
 information.oredict.content=§b- %s
 
+function.skulldata.notskull=§7你手中没有头颅
+function.skulldata.copied=§7成功复制到剪贴板！
+
+key.dev2.category=Dev2
+key.dev2.skull=获取头颅信息

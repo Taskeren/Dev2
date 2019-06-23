@@ -33,10 +33,10 @@ public class Keys {
 			EntityPlayerSP player = Minecraft.getMinecraft().player;
 			ItemStack mainhand = player.getHeldItemMainhand();
 			ItemStack offhand = player.getHeldItemOffhand();
-			if(mainhand.getItem() == Items.SKULL) {
+			if(isPlayerSkull(mainhand)) {
 				copySkullData(player, mainhand);
 			}
-			else if(offhand.getItem() == Items.SKULL) {
+			else if(isPlayerSkull(offhand)) {
 				copySkullData(player, offhand);
 			}
 			else {
@@ -44,6 +44,10 @@ public class Keys {
 			}
 		}
 		
+	}
+	
+	private static boolean isPlayerSkull(ItemStack stack) {
+		return stack.getItem() == Items.SKULL && stack.getItemDamage() == 3;
 	}
 	
 	private static void copySkullData(EntityPlayerSP player, ItemStack skull) {
