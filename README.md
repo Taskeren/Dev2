@@ -6,6 +6,17 @@ Development2 简称 Dev2，是由 Taskeren(nitu2003) 开发的信息查询工具
 ## 使用协议
 全模组使用 [CoFH "Don't Be a Jerk" License](https://github.com/nitu2003/Dev2/blob/master/LICENSE.md) 授权使用。
 
+## 常见问题
+
+#### Q：没有物品信息显示？
+A：在配置文档中启用信息显示功能，下方支持类型中的每一条目对应着一个配置选项，将需要的设置为`true`。
+
+#### Q：设置头颅贴图指令太长？
+A：在配置文档中添加该贴图的头颅码（如何将数据转换为头颅码，详见头颅码部分），重启游戏后即可在创造模式头颅物品栏中找到该头颅。*未来将添加命令方块设置方法，避免玩家输入字数限制。*
+
+#### Q：我遇到了因为 Dev2 引起的游戏崩溃？
+A：创建一个新的`issue`，写入引发崩溃的操作，带上崩溃日志。~~*你问我崩溃日志是什么？谷歌会吗！什么？谷歌被墙了？用百度啊！什么？不会用百度？那玩你🦄呢？*~~
+
 ## 模组内容
 
 ### 物品信息显示
@@ -14,7 +25,7 @@ Development2 简称 Dev2，是由 Taskeren(nitu2003) 开发的信息查询工具
 1. 注册名称（Registry Name）
 1. 未本地化名称（Unlocalized Name / TranslationKey）
 1. 矿物辞典（OreDictionary）
-1. 食物信息：饥饿值（Amount），饱和度（Saturation），是否是狼的食物（isWolfFavorite）
+1. 食物信息：饱食度（Amount），饱和度（Saturation），是否是狼的食物（isWolfFavorite）
 1. 唱片信息：唱片名称（Local Record Name），唱片音效注册名称（Sound Registry Name），唱片音效未本地话名称（Sound Unlocalized Name）
 
 ### 头颅操作系统
