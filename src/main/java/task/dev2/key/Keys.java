@@ -52,6 +52,9 @@ public class Keys {
 	
 	private static void copySkullData(EntityPlayerSP player, ItemStack skull) {
 		String data = SkullHelper.serialize(skull);
+		if(data.startsWith("||")) {
+			player.sendMessage(new TextComponentTranslation("function.skulldata.invalid"));
+		}
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(data), null);
 		player.sendMessage(new TextComponentTranslation("function.skulldata.copied"));
 	}
